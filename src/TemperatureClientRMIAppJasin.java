@@ -16,9 +16,10 @@ public class TemperatureClientRMIAppJasin {
 		
 		
 		try {
+			int portNo = 1803;
 			
 			// Get registry
-			Registry rmiRegistry = LocateRegistry.getRegistry();
+			Registry rmiRegistry = LocateRegistry.getRegistry(portNo);
 			
 			// Look-up for the remote object
 			TemperatureSensor remoteSensorJasin = (TemperatureSensor) rmiRegistry.lookup("SensorJasin");
@@ -26,7 +27,7 @@ public class TemperatureClientRMIAppJasin {
 			// Invoke method from the remote object
 			int currentTemperature = remoteSensorJasin.getTemperature();
 			
-			System.out.println("Current temperature in Jasin is " + currentTemperature + " Celcius");
+			System.out.println("Current temperature in Jasin is " + currentTemperature + " Celcius.");
 			
 		} catch (RemoteException | NotBoundException e) {
 			// TODO Auto-generated catch block
