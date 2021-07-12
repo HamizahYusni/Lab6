@@ -52,7 +52,7 @@ public class TemperatureSensorManager extends UnicastRemoteObject implements Tem
 		
 		HashMap <String, Integer> temp = loadTemperatureData();
 		
-		int totalTemperature=0;
+		int totalTemperature = 0;
 		for (int temperature : temp.values())
 		{
 			totalTemperature += temperature;
