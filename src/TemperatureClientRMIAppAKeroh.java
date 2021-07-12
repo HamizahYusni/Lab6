@@ -10,8 +10,10 @@ public class TemperatureClientRMIAppAKeroh {
 					
 					
 			try {
+				int portNo = 1803;
+				
 					// Get registry
-					Registry rmiRegistry = LocateRegistry.getRegistry();
+					Registry rmiRegistry = LocateRegistry.getRegistry(portNo);
 						
 					// Look-up for the remote object
 					TemperatureSensor remoteSensorAyerKeroh = (TemperatureSensor) rmiRegistry.lookup("SensorAyerKeroh");
