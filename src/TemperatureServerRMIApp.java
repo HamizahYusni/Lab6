@@ -14,12 +14,13 @@ public class TemperatureServerRMIApp {
 		
 		
 		try {
+			int portNo = 1803;
 			
 			// Create interface object
 			TemperatureSensor sensorJasin = new TemperatureSensorManager();
 			
-			// Get registry
-			Registry rmiRegistry = LocateRegistry.getRegistry();
+			// Create registry, port 1803
+			Registry rmiRegistry = LocateRegistry.createRegistry(portNo);
 			
 			// Register interface object as remote object
 			rmiRegistry.rebind("SensorJasin", sensorJasin);
